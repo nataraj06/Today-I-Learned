@@ -3,8 +3,7 @@
 
 Sometimes we might add some extra field in our pojo class for doing certain operations in app, also we might use the same pojo as post params retrofit post calls.
 
-```For Example```
-In the below example
+#### In the below example
 
 ```
 public class UserDetailsParams {
@@ -25,16 +24,17 @@ public class UserDetailsParams {
 }
 ```
 
-In the above class name, email, mobile, and location which I need to sent to server, if I am using this in body params one more addition field will be added in body params as ```"isLoggedIn":false``` which I dont want to send. At the same time this class has to be Parcelable.
+In above class name, email, mobile, and location are the fields which I want to sent server in RestApi, if I am using this in body params one more addition field will be added in body params as ```"isLoggedIn":false``` which I dont want to send. At the same time this class has to be Parcelable.
 
-### To overcome this kind of problem, I found a solution of creating a custom annotation for json ignore certain feilds
+### To overcome this kind of problem, I found a solution of creating a custom annotation below, which is not available in Gson parsing by default, but exists in Jackson.
 
 ```@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface JsonIgnore {
 }
 ```
-*Added a interface JsonIgnore, this can used an annotation as ```@JsonIgnore```
+* Added an interface JsonIgnore, this can used an annotation ```@JsonIgnore```
+* And in retrofit object we can override ExclusionStrategy for skipping as below.
 
 ```
 retrofit = new Retrofit.Builder()
@@ -57,8 +57,8 @@ retrofit = new Retrofit.Builder()
                     .client(client)
                     .build();
 ```
-* While creating retrofit object we can override ExclusionStrategy for skipping.
-So the pojo class with json ignore will be looks like below
+
+* So the pojo class with json ignore will be looks like below
 ```
 public class UserDetailsParams {
 
