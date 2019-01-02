@@ -1,5 +1,5 @@
 
-# Json Ignore for certain fields in our pojo class in retrofit (Annotation style: GSON)
+# Json Ignore for certain fields in pojo class using retrofit (Annotation style: GSON)
 
 Sometimes we might add some extra field in our pojo class for doing certain operations in app, also we might use the same pojo as post params retrofit post calls.
 
