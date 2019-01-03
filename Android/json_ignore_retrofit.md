@@ -24,7 +24,7 @@ public class UserDetailsParams {
 }
 ```
 
-In above class name, email, mobile, and location are the fields which I want to sent server in RestApi, if I am using this in body params one more addition field will be added in body params as ```"isLoggedIn":false``` which I dont want to send. At the same time this class has to be Parcelable.
+In the above class name, email, mobile, and location are the fields which I want to send server in RestApi. If I am using this in body params one more additional field will be added in body params as ```"isLoggedIn":false``` which I dont want to send. At the same time this class has to be Parcelable.
 
 ### To overcome this kind of problem, I found a solution of creating a custom annotation below, which is not available in Gson parsing by default, but exists in Jackson.
 
