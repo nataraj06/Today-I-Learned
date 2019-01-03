@@ -7,7 +7,7 @@ Repo is for store/track/recollect everyday learnings, These are things that don'
 
 ### Android
 - [Custom Json Ignore in Retrofit 2](Android/json_ignore_retrofit.md)
-- [Replacing Enums with Enumerated Annotations](stringdef_and_intdef.md)
+- [Replacing Enums with Enumerated Annotations](Android/stringdef_and_intdef.md)
 
 
 ---
