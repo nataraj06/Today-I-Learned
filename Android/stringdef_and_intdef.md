@@ -11,6 +11,27 @@ This is typically used to replace enums. Google discourages the use of enums on 
 
 In java, ```enum``` is known concept, and in many cases you can use it, but for android, ```enum``` is something you should avoid to use as it’s processing performance is not efficient, so in Android performance patterns it’s told to avoid ```enum```s and to use annotations like ```@IntDef``` and ```@StringDef```
 
+For example, you are working on a library that make user choose photo from gallery and camera and you are passing ```int``` value in your library method and taking argument in ```int```. Then, based upon that value, you are opening camera or gallery.
+
+```java
+class MyPicLibrary
+{
+    public static void pickPhoto(int source)
+    {
+        if (source == 0)
+        {
+            // Camera intent goes here
+        }
+        else if (source == 1)
+        {
+            // Gallery intent goes here
+        }
+    }
+}
+```
+
+We can create ```static final int``` variables with names like ```CAMERA = 0``` and ```GALLERY = 1``` to make things easier to read and understand, but that will still give developers to pass any kind of ```int``` value in the ```pickPhoto()``` method. But, our goal is to restrict the developers to only pass values through our assigned names as its happening with ```View.setVisibility()``` method.
+
 For this purpose, android has ```@IntDef``` and ```@StringDef``` annotations. Here's a simplest example how previously described problem can be made easy with ```@IntDef```.
 
 ```java
