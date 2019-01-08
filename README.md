@@ -9,6 +9,7 @@ Repo is for store/track/recollect everyday learnings, These are things that don'
 - [Custom Json Ignore in Retrofit 2](Android/json_ignore_retrofit.md)
 - [Replacing Enums with Enumerated Annotations](Android/stringdef_and_intdef.md)
 - [Butterknife vs DataBinding](Android/butterknife_and_databinding.md)
+- [What is build type,flavours,build variants](Android/build_variant_flavours_type.md)
 
 
 ---
