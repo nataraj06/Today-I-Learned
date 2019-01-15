@@ -10,6 +10,7 @@ Repo is for store/track/recollect everyday learnings, These are things that don'
 - [Replacing Enums with Enumerated Annotations](Android/stringdef_and_intdef.md)
 - [Butterknife vs DataBinding](Android/butterknife_and_databinding.md)
 - [What is build type,flavours,build variants](Android/build_variant_flavours_type.md)
+- [List Adapters - RecyclerView]()
 
 
 ---
